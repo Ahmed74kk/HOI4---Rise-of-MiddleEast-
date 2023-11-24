@@ -1,0 +1,2296 @@
+﻿focus_tree = {
+	id = arab_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+            OR = {
+            tag = YEM
+			tag = OMA
+			tag = SAU
+			tag = IRQ
+			tag = PER
+			tag = JOR
+            }
+			
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 2500 }
+	
+	focus = {
+		id = the_army_9
+		icon = GFX_focus_prc_infiltration
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 26
+		y = 1
+		#relative_position_id = 
+		
+		cost = 5
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    army_experience = 35
+			add_equipment_to_stockpile = {
+            type = infantry_equipment_0
+            amount = 250
+			}
+			add_opinion_modifier = { target = ETH modifier = medium_decrease }
+		}
+		ai_will_do = {
+			factor = 7
+		}
+	}
+	focus = {
+		id = the_alaskan_artillery_9
+		icon = GFX_goal_generic_army_artillery
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		x = 0
+		y = 1
+		relative_position_id = the_army_9
+		
+		cost = 5
+		prerequisite = { focus = the_army_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = land_doctrine
+            }
+		}
+		ai_will_do = {
+			factor = 7
+		}
+	}
+	focus = {
+		id = the_alaskan_mil_effort_9
+		icon = GFX_focus_focus_fra_maquis
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		x = 0
+		y = 1
+		relative_position_id = the_alaskan_artillery_9
+		
+		cost = 5
+		prerequisite = { focus = the_alaskan_artillery_9 }
+		mutually_exclusive = { focus = the_alaskan_man_effort_9 }
+		mutually_exclusive = { focus = the_alaskan_guns_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = land_doctrine
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = the_alaskan_man_effort_9
+		icon = GFX_focus_generic_little_entente
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		x = -4
+		y = 0
+		relative_position_id = the_alaskan_mil_effort_9
+		
+		cost = 5
+		prerequisite = { focus = the_alaskan_artillery_9 }
+		mutually_exclusive = { focus = the_alaskan_guns_effort_9 }
+		mutually_exclusive = { focus = the_alaskan_mil_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_manpower = +25000
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = the_alaskan_guns_effort_9
+		icon = GFX_focus_chi_army_reform
+		x = 4
+		y = 0
+		relative_position_id = the_alaskan_mil_effort_9
+		
+		cost = 5
+		prerequisite = { focus = the_alaskan_artillery_9 }
+		mutually_exclusive = { focus = the_alaskan_man_effort_9 }
+		mutually_exclusive = { focus = the_alaskan_mil_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    army_experience = 50
+		    add_equipment_to_stockpile = {
+            type = infantry_equipment_0
+            amount = 2500
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = alaskan_military_effort_9
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = the_alaskan_mil_effort_9
+		
+		cost = 5
+		prerequisite = {
+		     focus = the_alaskan_mil_effort_9
+			 focus = the_alaskan_man_effort_9
+			 focus = the_alaskan_guns_effort_9
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = the_alaskan_planes_fagg_9
+		icon = GFX_goal_generic_air_fighter
+		x = 1
+		y = 1
+		relative_position_id = alaskan_military_effort_9
+		
+		cost = 5
+		prerequisite = { focus = alaskan_military_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    air_experience = 70
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = light_fighter
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = cat_heavy_fighter
+            }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = the_alaskan_planes_fagg_2_9
+		icon = GFX_goal_generic_air_fighter2
+		x = -1
+		y = 1
+		relative_position_id = alaskan_military_effort_9
+		
+		cost = 5
+		prerequisite = { focus = alaskan_military_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_heavy_fighter
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = air_doctrine
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = the_alaskan_planes_bomber_9
+		icon = GFX_goal_generic_air_bomber
+		x = -3
+		y = 1
+		relative_position_id = alaskan_military_effort_9
+		
+		cost = 5
+		prerequisite = { focus = alaskan_military_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    air_experience = 70
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = cat_strategic_bomber
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = the_alaskan_planes_bomber_2_9
+		icon = GFX_focus_chi_flying_tigers
+		x = 0
+		y = 1
+		relative_position_id = the_alaskan_planes_bomber_9
+		
+		cost = 5
+		prerequisite = { focus = the_alaskan_planes_bomber_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = air_doctrine
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = the_alaskan_planes_cas_9
+		icon = GFX_goal_generic_air_fighter
+		x = 6
+		y = 0
+		relative_position_id = the_alaskan_planes_bomber_9
+		
+		cost = 5
+		prerequisite = { focus = alaskan_military_effort_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    air_experience = 70
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = cas_bomber
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = the_alaskan_planes_cas_2_9
+		icon = GFX_goal_generic_CAS
+		x = 0
+		y = 1
+		relative_position_id = the_alaskan_planes_cas_9
+		
+		cost = 5
+		prerequisite = { focus = the_alaskan_planes_cas_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cas_bomber
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = air_doctrine
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = alaskan_military_effort_2_9
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 2
+		relative_position_id = alaskan_military_effort_9
+		
+		cost = 5
+		prerequisite = { focus = the_alaskan_planes_fagg_9 }
+		prerequisite = { focus = the_alaskan_planes_fagg_2_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = our_army_is_our_pride_9
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 0
+		y = 1
+		relative_position_id = alaskan_military_effort_2_9
+		search_filters = {
+		     FOCUS_FILTER_RESEARCH
+			 FOCUS_FILTER_MANPOWER
+			 }
+		
+		cost = 5
+		prerequisite = { focus = alaskan_military_effort_2_9 }
+		prerequisite = { focus = the_alaskan_planes_bomber_2_9 }
+		prerequisite = { focus = the_alaskan_planes_cas_2_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    army_experience = 35
+		    add_political_power = 150
+			add_manpower = 50000
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 7
+		}
+	}
+	focus = {
+		id = the_navy_9
+		icon = GFX_goal_generic_navy_battleship
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 34
+		y = 1
+		#relative_position_id = 
+		
+		cost = 1
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_political_power = 15
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = ship_9
+		icon = GFX_goal_generic_construct_naval_dockyard
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -1
+		y = 1
+		relative_position_id = the_navy_9
+		
+		cost = 10
+		prerequisite = { focus = the_navy_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    random_owned_controlled_state = {
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			navy_experience = 25
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = shipo_9
+		icon = GFX_goal_generic_build_navy
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 1
+		y = 1
+		relative_position_id = the_navy_9
+		
+		cost = 10
+		prerequisite = { focus = the_navy_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = shipre_9
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		relative_position_id = ship_9
+		
+		cost = 10
+		prerequisite = { focus = ship_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = shipro_9
+		icon = GFX_goal_generic_navy_submarine
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		relative_position_id = shipo_9
+		
+		cost = 10
+		prerequisite = { focus = shipo_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = shiproptor_9
+		icon = GFX_goal_generic_navy_cruiser
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		relative_position_id = shipro_9
+		
+		cost = 10
+		prerequisite = { focus = shipro_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		   add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			} 
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = shiproptor_2_9
+		icon = GFX_goal_generic_wolf_pack
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		relative_position_id = shipre_9
+		
+		cost = 10
+		prerequisite = { focus = shipre_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		   add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			} 
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = shiproptor_3_9
+		icon = GFX_goal_generic_navy_battleship
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		relative_position_id = shiproptor_2_9
+		
+		cost = 10
+		prerequisite = { focus = shiproptor_2_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = ship_2_9
+		icon = GFX_goal_generic_construct_naval_dockyard
+		#search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		relative_position_id = shiproptor_9
+		
+		cost = 10
+		prerequisite = { focus = shiproptor_9 }
+		#mutually_exclusive = { focus =  }
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = YEM
+				is_core_of = YEM
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		    random_owned_controlled_state = {
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			navy_experience = 25
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = nation_of_people_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_generic_befriend_saudi_arabia
+		x = 10
+		y = 1
+		#relative_position_id = quatal_bear_9
+		
+		cost = 10
+		#prerequisite = { focus = quatal_bear }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = internal_politics_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = nation_of_people_9
+		
+		cost = 7
+		prerequisite = { focus = nation_of_people_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.05
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = state_of_islam_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_TUR_turanist_ambition
+		x = -7
+		y = 1
+		relative_position_id = internal_politics_9
+		
+		cost = 5
+		prerequisite = { focus = internal_politics_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+			add_ideas = islam_in_country
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = sharia_law_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_sharia_law
+		x = -2
+		y = 1
+		relative_position_id = state_of_islam_9
+		
+		cost = 5
+		prerequisite = { focus = state_of_islam_9 }
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = islam_in_country
+			add_ideas = islam_in_country_2
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = warriors_of_allah_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_warriors_of_allah
+		x = 0
+		y = 1
+		relative_position_id = sharia_law_9
+		
+		cost = 5
+		prerequisite = { focus = sharia_law_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_manpower = 15000
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = islam_is_tradition_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_islam_tradition
+		x = 0
+		y = 1
+		relative_position_id = state_of_islam_9
+		
+		cost = 5
+		prerequisite = { focus = state_of_islam_9 }
+
+		available = { }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = islam_in_country
+			add_ideas = islam_in_country_3
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = may_allah_bring_us_peace_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_allah_peace
+		x = 1
+		y = 1
+		relative_position_id = islam_is_tradition_9
+		
+		cost = 5
+		prerequisite = { focus = islam_is_tradition_9
+			focus = outlaw_religion_9
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = outlaw_religion_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_no_islam
+		x = 2
+		y = 1
+		relative_position_id = state_of_islam_9
+		
+		cost = 5
+		prerequisite = { focus = state_of_islam_9 }
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = islam_in_country
+			add_ideas = islam_in_country_4
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = state_of_policy_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+		x = 0
+		y = 1
+		relative_position_id = internal_politics_9
+		
+		cost = 5
+		prerequisite = { focus = internal_politics_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = policy_in_country
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = go_fascism_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_support_fascism
+		x = -3
+		y = 1
+		relative_position_id = state_of_policy_9
+		
+		cost = 10
+		prerequisite = { focus = state_of_policy_9 }
+
+		available = {
+		}
+		mutually_exclusive = { focus = go_communism_9 }
+		mutually_exclusive = { focus = go_democratic_9 }
+		mutually_exclusive = { focus = go_monarchy_9 }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nationalism
+				days = 720
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = lalal_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = go_fascism_9
+		
+		cost = 10
+		prerequisite = { focus = go_fascism_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = militarism_focus
+			army_experience = 20
+			set_rule = { can_send_volunteers = yes }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = laino_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 0
+		y = 1
+		relative_position_id = lalal_9
+		
+		cost = 10
+		prerequisite = { focus = lalal_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+					ideology = fascism
+					popularity = 0.2
+			}
+			add_ideas = military_youth_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = paravoenni_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_military_sphere
+		x = 0
+		y = 1
+		relative_position_id = laino_9
+		
+		cost = 10
+		prerequisite = { focus = laino_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = paramilitarism_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = parashut_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_hol_united_netherlands
+		x = 0
+		y = 1
+		relative_position_id = paravoenni_9
+		
+		cost = 10
+		prerequisite = { focus = paravoenni_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+				can_use_kamikaze_pilots = yes
+			}
+			add_ideas = ideological_fanaticism_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = go_communism_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_support_communism
+		x = -1
+		y = 1
+		relative_position_id = state_of_policy_9
+		
+		cost = 10
+		prerequisite = { focus = state_of_policy_9 }
+
+		available = {
+		}
+		mutually_exclusive = { focus = go_fascism_9 }
+		mutually_exclusive = { focus = go_democratic_9 }
+		mutually_exclusive = { focus = go_monarchy_9 }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = internationalism
+				days = 720
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = kojo_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_dangerous_deal
+		x = 0
+		y = 1
+		relative_position_id = go_communism_9
+		
+		cost = 10
+		prerequisite = { focus = go_communism_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 200
+			add_ideas = idea_political_correctness
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = lenin_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 0
+		y = 1
+		relative_position_id = kojo_9
+		
+		cost = 10
+		prerequisite = { focus = kojo_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+					ideology = communism
+					popularity = 0.15
+			}
+			add_stability = 0.1
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = kommi_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 1
+		relative_position_id = lenin_9
+		
+		cost = 10
+		prerequisite = { focus = lenin_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = indoctrination_focus
+			add_political_power = 150
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = kon_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_generic_join_comintern
+		x = 0
+		y = 1
+		relative_position_id = kommi_9
+		
+		cost = 10
+		prerequisite = { focus = kommi_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 200
+			add_ideas = political_commissars_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = go_democratic_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_support_democracy
+		x = 1
+		y = 1
+		relative_position_id = state_of_policy_9
+		
+		cost = 10
+		prerequisite = { focus = state_of_policy_9 }
+
+		available = {
+		}
+		mutually_exclusive = { focus = go_communism_9 }
+		mutually_exclusive = { focus = go_fascism_9 }
+		mutually_exclusive = { focus = go_monarchy_9 }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = liberty_ethos_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = kokoshka_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 0
+		y = 1
+		relative_position_id = go_democratic_9
+		
+		cost = 10
+		prerequisite = { focus = go_democratic_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			add_political_power = 150
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = pedro_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		relative_position_id = kokoshka_9
+		
+		cost = 10
+		prerequisite = { focus = kokoshka_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = volunteer_corps_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = pepar_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 0
+		y = 1
+		relative_position_id = pedro_9
+		
+		cost = 10
+		prerequisite = { focus = pedro_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = foreign_expeditions_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = paprat_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 1
+		relative_position_id = pepar_9
+		
+		cost = 10
+		prerequisite = { focus = pepar_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+			add_popularity = {
+			     ideology = democratic
+				 popularity = +0.15
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = go_monarchy_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_hun_elect_a_king
+		x = 3
+		y = 1
+		relative_position_id = state_of_policy_9
+		
+		cost = 10
+		prerequisite = { focus = state_of_policy_9 }
+
+		available = {
+		}
+		mutually_exclusive = { focus = go_communism_9 }
+		mutually_exclusive = { focus = go_democratic_9 }
+		mutually_exclusive = { focus = go_fascism_9 }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = liberty_ethos_focus
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = koko_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = go_monarchy_9
+		
+		cost = 10
+		prerequisite = { focus = go_monarchy_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = neutrality_idea
+			add_political_power = 150
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = korona_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_generic_defence
+		x = 0
+		y = 1
+		relative_position_id = koko_9
+		
+		cost = 10
+		prerequisite = { focus = koko_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = deterrence
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = kral_kral_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_generic_home_defense
+		x = 0
+		y = 1
+		relative_position_id = korona_9
+		
+		cost = 10
+		prerequisite = { focus = korona_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+			     ideology = neutrality
+				 popularity = +0.15
+			}
+			add_ideas = ideological_fanaticism_focus
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = kral_na_kralete_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 0
+		y = 1
+		relative_position_id = kral_kral_9
+		
+		cost = 10
+		prerequisite = { focus = kral_kral_9 }
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+			add_popularity = {
+			     ideology = neutrality
+				 popularity = +0.15
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = mahni_politika_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 1
+		y = 1
+		relative_position_id = kon_9
+		
+		cost = 5
+		prerequisite = { focus = kral_na_kralete_9
+			focus = kon_9
+			focus = paprat_9
+			focus = parashut_9
+		}
+
+		available = {
+		}
+		#mutually_exclusive = { focus = }
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = policy_in_country
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = state_of_economy_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_POLITICAL
+		}
+		icon = GFX_focus_mex_privatisation
+		x = 7
+		y = 1
+		relative_position_id = internal_politics_9
+		
+		cost = 5
+		prerequisite = { focus = internal_politics_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = economy_in_country
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = invest_in_the_heavy_industry_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_goal_generic_construct_civilian
+		x = -2
+		y = 1
+		relative_position_id = state_of_economy_9
+		
+		cost = 5
+		prerequisite = { focus = state_of_economy_9 }
+		mutually_exclusive = { focus = invest_in_the_chemical_industry_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = GER_autarky_idea
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = steel_factory_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_generic_steel
+		x = 0
+		y = 1
+		relative_position_id = invest_in_the_heavy_industry_9
+		
+		cost = 10
+		prerequisite = { focus = invest_in_the_heavy_industry_9 }
+		#mutually_exclusive = { focus = }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+					add_resource = {
+		             type = steel
+		             amount = 16
+					}
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = aluminium_factory_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_generic_aluminum
+		x = 0
+		y = 1
+		relative_position_id = steel_factory_9
+		
+		cost = 10
+		prerequisite = { focus = steel_factory_9 }
+		#mutually_exclusive = { focus = }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+					add_resource = {
+		             type = aluminium
+		             amount = 9
+					}
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = tungsten_factory_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_generic_tungsten
+		x = 0
+		y = 1
+		relative_position_id = aluminium_factory_9
+		
+		cost = 10
+		prerequisite = { focus = aluminium_factory_9 }
+		#mutually_exclusive = { focus = }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+					add_resource = {
+		             type = tungsten
+		             amount = 9
+					}
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = invest_in_the_chemical_industry_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_research2
+		x = 0
+		y = 1
+		relative_position_id = state_of_economy_9
+		
+		cost = 5
+		prerequisite = { focus = state_of_economy_9 }
+		mutually_exclusive = { focus = invest_in_the_heavy_industry_9 }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+			add_tech_bonus = {
+                bonus = 3
+                uses = 1
+				category = synth_resources
+            } 
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = oil_boy_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1
+		relative_position_id = invest_in_the_chemical_industry_9
+		
+		cost = 5
+		prerequisite = { focus = invest_in_the_chemical_industry_9 }
+		#mutually_exclusive = { focus = }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+                bonus = 3
+                uses = 1
+				category = synth_resources
+            }
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = oil_boy_2_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1
+		relative_position_id = oil_boy_9
+		
+		cost = 5
+		prerequisite = { focus = oil_boy_9 }
+		#mutually_exclusive = { focus = }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = build_up_the_roads_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = oil_boy_2_9
+		
+		cost = 5
+		prerequisite = { focus = oil_boy_2_9 }
+		#mutually_exclusive = { focus = }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+			add_ideas = GER_grosraumwirtschaft
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = invest_in_the_civilian_industry_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_generic_industry_1
+		x = 2
+		y = 1
+		relative_position_id = state_of_economy_9
+		
+		cost = 3
+		prerequisite = { focus = state_of_economy_9 }
+		#mutually_exclusive = { focus = invest_in_the_heavy_industry }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = civilian_industry_maika_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_generic_industry_2
+		x = 0
+		y = 1
+		relative_position_id = invest_in_the_civilian_industry_9
+		
+		cost = 10
+		prerequisite = { focus = invest_in_the_civilian_industry_9 }
+		#mutually_exclusive = { focus = invest_in_the_heavy_industry }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = civilian_industry_2_9
+			
+	    search_filters = {
+		    FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_focus_generic_industry_3
+		x = 0
+		y = 1
+		relative_position_id = civilian_industry_maika_9
+		
+		cost = 10
+		prerequisite = { focus = civilian_industry_maika_9 }
+		#mutually_exclusive = { focus = invest_in_the_heavy_industry }
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = economy_in_country
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+                bonus = 1
+                uses = 2
+				category = industry
+            }
+		}
+		ai_will_do = {
+		}
+	}
+}		

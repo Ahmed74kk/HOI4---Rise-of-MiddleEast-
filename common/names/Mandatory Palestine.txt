@@ -1,0 +1,18 @@
+MAP = {
+	male = {
+		names = {
+			"Mohammad" "Ahmed" "Ali" "Omar" "Abdallah" "Ayman" "Rashad" "Amir" "Tarek" "Khalid" "Mahmoud" "Youssef" "Fadi" "Hussain" "Nasser" "Hassan" "Jihad" "Eyad" "Osama" "Marwan" "Taha" "Waleed" "Abdulrahman" "Hamza" "Samir" "Ibrahim" "Mustafa" "Alaa" "Nabil" "Rami" "Sharif" "Faisal" "Ahmad" "Ziad" "Khalil" "Laith" "Mohammad-Ali" "Fawzi" "Ali-Mohammad" "Nour" "Yaser" "Tamer" "Khalid-Ali" "Mousa" "Raed" "Wissam" "Othman" "Khaled-Hassan" "Bashar" "Hisham" "Ali-Hussain" "Amjad" "Jamil" "Mahmud" "Yusuf" "Muhammad-Ali" "Musa" "Ali-Yusuf" "Iyad-Mohammad" "Fayez" "Youssef-Ali" "Saud" "Ali-Saud" "Khalid-Saud" "Fahad" "Abdullah-Ali" "Majdi" "Saeed" "Ali-Saeed" "Salim" "Ali-Salim" "Khalil-Ahmed" "Mahmoud-Ali" 
+		}
+	}
+	female = {
+		names = {
+			"Amal" "Aisha" "Amani" "Aya" "Basma" "Dalia" "Dina" "Fatima" "Hadeel" "Hana" "Hiba" "Jana" "Joud" "Kholoud" "Lamia" "Lama" "Leila" "Lina" "Maha" "Maha" "Malak" "Manar" "Mariam" "Maryam" "Mayar" "Nadia" "Nour" "Raghad" "Rana" "Raya" "Reem" "Rula" "Sara" "Sawsan" "Shatha" "Shireen" "Taghreed" "Tahrir" "Thurayya" "Wafa" "Wijdan" "Yara" "Yasmin" "Yusra" "Zeina" 
+		}
+	}
+	surnames = {
+		"Abu Aker" "Abu Arisha" "Abu Awad" "Abu Baker" "Abu Dahouk" "Abu Eid" "Abu Ghazal" "Abu Halabi" "Abu Hashim" "Abu Jubber" "Abu Khalil" "Abu Khdeir" "Abu Mahmoud" "Abu Marar" "Abu Mashni" "Abu Mousa" "Abu Nabhan" "Abu Odeh" "Abu Raddad" "Abu Rwaite" "Abu Saleh" "Abu Sham'a" "Abu Sharkas" "Abu Shoblaq" "Abu Taha" "Abu Tawil" "Abu Ubeid" "Abu Wadi" "Abu Yaghmour" "Abu Zayed" "Al-Hajj" "Al-Masri" "Al-Najjar" "Al-Qudah" "Al-Safadi" "Al-Shanti" "Al-Tahhan" "Al-Tamimi" "Al-Zubeidi" 
+	}
+	callsigns = {
+		"Abu Ali" "Al-Fajr" "Al-Jabal" "Al-Jazeera" "Al-Jihad" "Al-Khalil" "Al-Quds" "Al-Qudsia" "Al-Sahaba" "Al-Sayyid" "Al-Shahada" "Al-Shuhada" "Al-Tahrir" "Al-Tawheed" "Al-Wahda" "Al-Wahsh" "Al-Yarmouk" "Al-Zahra" "Al-Zaytoun" "Al-Zein" "Al-Zulfiqar" "Al-Abbas" "Al-Aqsa" "Al-Bireh" "Al-Dura" "Al-Fatah" "Al-Hussein" "Al-Istiqlal" "Al-Jalil" "Al-Jamal" "Al-Karamah" "Al-Kasir" "Al-Khalid" "Al-Khansaa" "Al-Khudur" "Al-Lions" "Al-Mahdi" "Al-Mansour" "Al-Muqawama" "Al-Murabba" "Al-Nasr" "Al-Nour" "Al-Qasim" "Al-Quds" "Al-Rashad" "Al-Safir" "Al-Sakina" "Al-Sayyida" "Al-Shahid" "Al-Shuhada" "Al-Tahrir" "Al-Tawheed" "Al-Wahda" "Al-Wahsh" "Al-Yarmouk" "Al-Zahra" "Al-Zein" "Al-Zulfiqar" 
+	}
+}

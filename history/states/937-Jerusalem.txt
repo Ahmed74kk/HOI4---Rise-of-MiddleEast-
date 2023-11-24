@@ -1,0 +1,36 @@
+state={
+	id=937
+	name="STATE_937"
+	provinces={
+		1086 7107 
+	}
+        resources={
+		oil=2 # was: 2
+		tungsten = 1 #maganese
+		steel = 2 #Maganese
+		aluminium = 2
+	}
+
+	history={
+		owner = MAP
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			air_base = 2
+
+		}
+		victory_points = {
+			1086 1 
+		}
+		victory_points = {
+			7107 1 
+		}
+		add_core_of = PAL
+		add_core_of = ISR
+
+	}
+	manpower=286628
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

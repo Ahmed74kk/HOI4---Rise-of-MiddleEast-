@@ -1,0 +1,21 @@
+#Create units
+division_template = {
+	name = "British Troops"
+	division_names_group = "MAP_DIV_0_0"
+	regiments = {
+		camelry = { x = 0 y = 0}
+		camelry = { x = 1 y = 0}
+	}
+	support = {
+	}
+
+}
+
+#Spawn units
+units = {
+	division= {
+		name = "1st British Troops"
+		location = 1086
+		division_template = "British Troops"
+	}
+}

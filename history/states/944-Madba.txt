@@ -1,0 +1,24 @@
+state={
+	id=944
+	name="STATE_944"
+	provinces={
+		10089 
+	}
+        history={
+		owner = JOR
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			4088 1 
+		}
+
+		add_core_of = JOR
+
+	}
+	manpower=26552
+	buildings_max_level_factor=1.000
+        state_category=large_town
+	local_supplies=0.000
+}

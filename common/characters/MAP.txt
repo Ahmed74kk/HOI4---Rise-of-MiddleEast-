@@ -1,0 +1,86 @@
+characters = {
+#Create country leader - Regent Raghib al-Nashashibi
+regent_raghib_alnashashibi = {
+	name = regent_raghib_alnashashibi
+	portraits = {
+		civilian = {
+			#Custom image for Regent Raghib al-Nashashibi
+			large = "/gfx/leaders/MAP/regent_raghib_alnashashibi.dds"
+		}
+	}
+	country_leader = {
+		expire = "2000.01.01"
+		ideology = despotism
+		traits = {  }
+	}
+}
+
+#Create country leader - Sir Arthur Grenfell Wauchope
+sir_arthur_grenfell_wauchope = {
+	name = sir_arthur_grenfell_wauchope
+	portraits = {
+		civilian = {
+			#Custom image for Sir Arthur Grenfell Wauchope
+			large = "/gfx/leaders/MAP/Arthur_Grenfell_Wauchope.dds"
+		}
+	}
+	country_leader = {
+		expire = "2000.01.01"
+		ideology = conservatism
+		traits = {  }
+	}
+}
+
+#Create country leader - Hajj Amin al-Husayni
+hajj_amin_alhusayni = {
+	name = hajj_amin_alhusayni
+	portraits = {
+		civilian = {
+			#Custom image for Hajj Amin al-Husayni
+			large = "/gfx/leaders/MAP/hajj_amin_alhusayni.dds"
+		}
+	}
+	country_leader = {
+		expire = "2000.01.01"
+		ideology = anti_revisionism
+		traits = {  }
+	}
+}
+
+#Create country leader - Sheikh Izzadin Al-Qassam
+sheikh_izzadin_alqassam = {
+	name = sheikh_izzadin_alqassam
+	portraits = {
+		civilian = {
+			#Custom image for Sheikh Izzadin Al-Qassam
+			large = "/gfx/leaders/MAP/tgoVpqas-562534.dds"
+		}
+	}
+	country_leader = {
+		expire = "2000.01.01"
+		ideology = rexism
+		traits = {  }
+	}
+}
+
+# MAP Military Leaders
+	M_sir_arthur_grenfell_wauchope = {
+		name = "M_sir_arthur_grenfell_wauchope"
+		portraits = {
+			army = {
+				#Custom images for Sir Arthur Grenfell Wauchope
+				large = "/gfx/leaders/MAP/Arthur_Grenfell_Wauchope.dds"
+				small = "/gfx/interface/ideas/MAP/Arthur_Grenfell_Wauchope.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		legacy_id = 1361100630
+		}
+	}
+}

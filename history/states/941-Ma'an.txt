@@ -1,0 +1,23 @@
+state={
+	id=941
+	name="STATE_941"
+	provinces={
+		4603 11976 
+	}
+        history={
+		owner = JOR
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = {
+			4088 1 
+		}
+
+		add_core_of = JOR
+
+	}
+	manpower=92501
+	buildings_max_level_factor=1.000
+        state_category=rural
+	local_supplies=0.000
+}

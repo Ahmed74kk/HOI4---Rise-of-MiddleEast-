@@ -1,0 +1,25 @@
+state={
+	id=938
+	name="STATE_938"
+	provinces={
+		4088 
+	}
+	history={
+		owner = MAP
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+		victory_points = {
+			4088 1 
+		}
+
+		add_core_of = PAL
+		add_core_of = ISR
+
+	}
+	manpower=206628
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}
